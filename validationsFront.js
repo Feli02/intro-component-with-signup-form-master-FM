@@ -50,7 +50,9 @@ btn.addEventListener('click', () => {
         }
     }
 
-    if(email.value == null || email.value.length == 0 || /^\s+$/.test(email.value)){
+    valor = email.value
+    regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if(email.value == null || email.value.length == 0 || !regex.test(valor)){
         errorEmail.style.display = 'block';
         errorEmailText.style.display = 'block';
         email.classList.add('errorInput')
